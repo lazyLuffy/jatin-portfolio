@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const ejs = require('ejs');
 const routes = require('./routes/userRoute');
+const port = process.env.PORT || 8080;
 
 mongoose.connect("mongodb+srv://jatin121:jatin121@cluster0.1izut.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
     useUnifiedTopology: true,
@@ -30,6 +31,6 @@ app.get('/', (req,res)=>{
 
 app.use('/create',routes)
 
-app.listen(8080,"localhost",()=>{
-    console.log('listening at http://localhost:8080')
+app.listen(port,"localhost",()=>{
+    console.log('listening at http://localhost:${port}');
 })
