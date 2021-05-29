@@ -32,5 +32,5 @@ app.get('/', (req,res)=>{
 app.use('/create',routes)
 
 app.listen(port,"localhost",()=>{
-    console.log('listening at http://localhost:${port}');
+    console.log(`listening at http://localhost:${port}`);
 })
